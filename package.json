@@ -4,17 +4,21 @@
   "private": true,
   "dependencies": {
     "@craco/craco": "^7.1.0",
+    "@hookform/resolvers": "^3.9.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.6.8",
+    "formik": "^2.4.6",
     "lodash": "^4.17.21",
     "node-sass": "^4.14.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.52.2",
     "react-scripts": "next",
     "styled-components": "^6.1.8",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yup": "^1.4.0"
   },
   "scripts": {
     "start": "react-scripts start",

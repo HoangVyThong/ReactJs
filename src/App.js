@@ -1,8 +1,11 @@
-import Form from "./components/form/Form";
-import MovieSearchApp from "./components/Movie/MovieSearchApp";
+import SignUpFormHook from "./components/form/SignUpFormHook";
 
 function App() {
-  return <MovieSearchApp></MovieSearchApp>;
+  return (
+    <div>
+      <SignUpFormHook></SignUpFormHook>;
+    </div>
+  );
 }
 
 export default App;
