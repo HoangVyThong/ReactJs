@@ -1,7 +1,11 @@
 import SignUpFormHook from "./components/form/SignUpFormHook";
 
 function App() {
-  return <SignUpFormHook></SignUpFormHook>;
+  return (
+    <div>
+      <SignUpFormHook></SignUpFormHook>;
+    </div>
+  );
 }
 
 export default App;
