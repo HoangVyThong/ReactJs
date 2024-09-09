@@ -28,6 +28,7 @@ const SignUpFormFinal = () => {
             email: "",
             intro: "",
             job: "",
+
             terms: false,
           });
           actions.setSubmitting(false);

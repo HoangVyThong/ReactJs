@@ -1,5 +1,5 @@
 import React from "react";
-import { useForm } from "react-hook-form";
+import { Controller, useController, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
@@ -22,6 +22,7 @@ const SignUpFormHook = () => {
   const {
     register,
     handleSubmit,
+    control,
     formState: { errors, isSubmitting, isValid },
   } = useForm({ resolver: yupResolver(schema) });
   console.log(
@@ -75,13 +76,20 @@ const SignUpFormHook = () => {
         <label htmlFor="email" className="font-semibold">
           Email address
         </label>
-        <input
+        <MyInput
+          name="email"
+          placeholder="Enter your email"
+          type="email"
+          id="email"
+          control={control}
+        ></MyInput>
+        {/* <input
           type="email"
           id="email"
           placeholder="Enter your email"
           className="p-4 rounded-md border border-gray-200"
           {...register("email")}
-        />
+        /> */}
         {errors?.email && (
           <div className="text-red-500">{errors?.email?.message}</div>
         )}
@@ -99,5 +107,37 @@ const SignUpFormHook = () => {
     </form>
   );
 };
+
+const MyInput = ({ control, ...props }) => {
+  const { field } = useController({
+    control,
+    name: props.name,
+    defaultValue: "",
+  });
+  return (
+    <input
+      className="p-4 rounded-md border border-gray-200"
+      {...field}
+      {...props}
+    />
+  );
+};
+
+// const MyInput = ({ control, ...props }) => {
+//   return (
+//     <Controller
+//       name={props.name}
+//       defaultValue=""
+//       control={control}
+//       render={({ field }) => (
+//         <input
+//           className="p-4 rounded-md border border-gray-200"
+//           {...field}
+//           {...props}
+//         />
+//       )}
+//     ></Controller>
+//   );
+// };
 
 export default SignUpFormHook;
